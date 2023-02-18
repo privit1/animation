@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.container {
+  animation: rotate 2.5s alternate infinite ease-in-out;
+  perspective: 800px;
+  transform-style: preserve-3d;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: center;
+  animation: rotate 4s linear infinite;
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  border: 2px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.face1 {
+  transform: translateZ(100px);
+  background-color: darkblue;
+  color: yellow;
+}
+
+.face2 {
+  transform: translateZ(-100px) rotateY(180deg);
+  background-color: darkblue;
+  color: yellow;
+}
+
+.face3 {
+  transform: rotateY(-90deg) translateZ(100px);
+  background-color: yellow;
+  color: darkblue;
+}
+
+.face4 {
+  transform: rotateY(90deg) translateZ(100px);
+  background-color: yellow;
+  color: darkblue;
+}
+
+.face5 {
+  transform: rotateX(90deg) translateZ(100px);
+  background-color: darkblue;
+  color: yellow;
+}
+
+.face6 {
+  transform: rotateX(-90deg) translateZ(100px);
+  background-color: yellow;
+  color: darkblue;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
